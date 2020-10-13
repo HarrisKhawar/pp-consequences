@@ -1,0 +1,45 @@
+<%- include("partials/header"); -%>
+<div class="container">
+
+  <div class="jumbotron">
+    <h1 class="display-5"> <%= tree.name %> </h1>
+    <p class="lead"> <%= tree.owner %> </p>
+    <label for="lastContribution">Last Contribution:</label>
+
+
+    <!-- User Input -->
+
+    <form action="/input" method="post">
+
+      <div class="form-group">
+        <p class="text-muted">
+        <%= tree.contributions[tree.contributions.length - 1].content %>"</p>
+      </div>
+
+      <div class="form-group">
+        <label for="userText">Your Contribution:</label>
+        <textarea type="text" class="form-control" id="userText"
+          rows="3" name="content"></textarea>
+        <small id="usageGuide" class="form-text text-muted">
+          Please follow the rules listed here.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="userName">Your Nickname:</label>
+        <input type="text" class="form-control" id="userName"
+          placeholder="e.g. PinkSkyBlue" name="nickname">
+      </div>
+
+      <input type="hidden" name="treeID" value="<%=tree._id%>">
+
+      <button type="submit" class="btn btn-primary"
+        name="button">Submit</button>
+    </form>
+
+  </div>
+
+
+
+
+</div>
+<%- include("partials/footer"); -%>

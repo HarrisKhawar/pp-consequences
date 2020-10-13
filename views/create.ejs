@@ -1,0 +1,73 @@
+<%- include("partials/header"); -%>
+  <div class="container">
+
+    <form action="/create" method="post">
+      <!-- Tree Name -->
+      <div class="form-group row">
+        <label for="treeName" class="col-sm-2 col-form-label">Tree Name</label>
+        <div class="col-sm-10">
+          <input type="text" name="treeName" class="form-control" id="treeName">
+        </div>
+      </div>
+
+      <!-- User Name -->
+      <div class="form-group row">
+        <label for="treeName" class="col-sm-2 col-form-label">User Name</label>
+        <div class="col-sm-10">
+          <input type="text" name="userName" class="form-control" id="userName">
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group row">
+        <label for="treePassword" class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-10">
+          <input type="password" name="password" class="form-control" id="treePassword" placeholder="Any one with this password can change the tree's settings.">
+        </div>
+      </div>
+
+      <!-- Pilot -->
+      <div class="form-group row">
+        <label for="initialText" class="col-sm-2 col-form-label">Pilot</label>
+        <div class="col-sm-10">
+          <input class="form-control" name="pilot" id="Pilot" placeholder="The root of your story goes here.">
+        </div>
+      </div>
+
+      <!-- Settings -->
+      <fieldset class="form-group">
+        <div class="row">
+          <legend class="col-form-label col-sm-2 pt-0">Settings</legend>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+              <label class="form-check-label" for="gridRadios1">
+                Users can view whole tree after making contribution.
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+              <label class="form-check-label" for="gridRadios2">
+                Users can see only the previous contribution.
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+              <label class="form-check-label" for="gridRadios3">
+                Users cannot see any contributions.
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="form-group row">
+        <div class="col-sm-10">
+          <button type="submit" class="btn btn-primary">Create Tree</button>
+        </div>
+      </div>
+    </form>
+
+
+  </div>
+<%- include("partials/footer"); -%>

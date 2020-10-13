@@ -1,0 +1,22 @@
+<%- include("partials/header"); -%>
+<div class="container cards-container">
+
+  <!-- Trees -->
+  <div class="row">
+    <% trees.forEach(function(tree) { %>
+    <div class="col-sm-3 card-columns">
+      <div class="card" style="width: 16rem">
+        <div class="card-body">
+          <h5 class="card-title"><%= tree.name %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= tree.owner %></h6>
+          <p class="card-text"><%= tree.contributions[0].content %></p>
+          <a href="/input/<%=tree._id%>" class="card-link">Contribute</a>
+          <a href="/view/<%=tree._id%>" class="card-link">View</a>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+
+</div>
+<%- include("partials/footer"); -%>

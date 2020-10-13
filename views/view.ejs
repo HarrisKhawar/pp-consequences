@@ -1,0 +1,8 @@
+<%- include("partials/header"); -%>
+<div class="container">
+  <h1><%= tree.name %></h1>
+  <p><% tree.contributions.forEach(function(contribution) { %>
+  <%= contribution.content %>
+  <%})%></p>
+</div>
+<%- include("partials/footer"); -%>
