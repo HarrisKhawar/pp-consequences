@@ -12,7 +12,7 @@ const app = express();
 app.use(express.static('public'))
 
 // Connect local MongoDB
-mongoose.connect("mongodb://localhost:27017/storytree", {
+mongoose.connect("mongodb+srv://admin_harris:19thlane@wloat-point-1.riyzg.mongodb.net/consequences?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false
