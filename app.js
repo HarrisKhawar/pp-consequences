@@ -5,14 +5,16 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
 
 const app = express();
+dotenv.config();
 
 // Serve Static Files
 app.use(express.static('public'))
 
 // Connect local MongoDB
-mongoose.connect("mongodb+srv://admin_harris:19thlane@wloat-point-1.riyzg.mongodb.net/consequences?retryWrites=true&w=majority", {
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false

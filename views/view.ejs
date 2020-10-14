@@ -1,8 +1,26 @@
 <%- include("partials/header"); -%>
+
 <div class="container">
+
+  <!-- Tree Name -->
   <h1><%= tree.name %></h1>
+
+  <!-- Author Name -->
+  <h5 class="text-muted"><%= tree.owner %></h5>
+
+  <!-- Contributions -->
   <p><% tree.contributions.forEach(function(contribution) { %>
   <%= contribution.content %>
-  <%})%></p>
+  <% }) %></p>
+  <br>
+
+  <!-- Contributors -->
+  <h5>Contributors:</h5>
+  <ul>
+    <% tree.contributions.forEach(function(contribution) { %>
+      <li><%= contribution.author %> </li>
+    <% }) %>
+  </ul>
 </div>
+
 <%- include("partials/footer"); -%>
